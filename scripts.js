@@ -88,9 +88,9 @@ class Menu {         /*The main menu here*/
             description += ' ' + this.selectedMeal.describe() + '\n';
 
             for (let i = 0; i < this.selectedMeal.items.length; i++) {
-                description += i + ': ' + this.selectedMeal.item[i].item + ', ' + this.selectedMeal.item[i].group + ', ' + this.selectedMeal.item[i].aisle + '\n';
+                description += i + ': ' + this.selectedMeal.items[i].item + ', ' + this.selectedMeal.items[i].group + ', ' + this.selectedMeal.items[i].aisle + '\n';
             }
-                     /*secondary menu to input items...instrctions to create/delete to follow*/
+                     /*secondary menu to input items...instructions to create/delete to follow*/
             let selection2 = this.showItemMenuOptions (description);
             switch (selection2) {
                 case '1':
@@ -106,7 +106,7 @@ class Menu {         /*The main menu here*/
         let item = prompt('Enter the item name:');
         let group = prompt('Enter the food group of the item:');
         let aisle = prompt('Enter the aisle where the item is found:');
-        this.selectedMeal.addiItem.push(new Item (item, group, aisle));
+        this.selectedMeal.items.push(new Item (item, group, aisle));
     }
 
     deleteItem () {
